@@ -13,7 +13,7 @@ const Navigation = ({ toggle }) => {
           key={el.id}
           className={({ isActive }) =>
             twMerge(
-              clsx("flex items-center gap-2 p-4", isActive && "bg-blue-300")
+              clsx("flex items-center gap-2 p-4 animate-slide-right", isActive && "bg-blue-300")
             )
           }
         >

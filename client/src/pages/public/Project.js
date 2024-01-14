@@ -10,10 +10,10 @@ const Project = () => {
     else setaddView((prev) => prev.filter((el) => el.id !== id));
   };
   return (
-    <div className="w-full mt-8">
+    <div className="w-full pt-8">
       <div className="text-center">
-        <h2 className="text-3xl text-blue-400 font-semibold uppercase text-center">
-          Top recent Projects
+        <h2 className="text-3xl text-blue-400 font-semibold text-center">
+          Top Recent Projects
         </h2>
         <p className="text-gray-500 italic">
           here are my top 3 recent project with live links and sourse code
@@ -62,9 +62,9 @@ const Project = () => {
                 href={el.link}
                 rel="noreferrer"
                 target="_blank"
-                className="text-blue-400 hover:underline cursor-pointer text-center mt-4"
+                className="text-white font-semibold hover:underline cursor-pointer text-center mt-4 px-6 py-2 bg-blue-600 rounded-md hover:bg-green-600"
               >
-                Click here
+                View
               </a>
             )}
           </div>

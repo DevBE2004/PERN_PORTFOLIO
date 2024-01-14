@@ -3,17 +3,20 @@ import clsx from "clsx";
 import Menus from "../menus/Menus";
 import { setIsShowMenu } from "../../store/Menu/menuSlice";
 import { twMerge } from "tailwind-merge";
+import { setMenuLeft } from "../../store/Menu/menuSlice";
 import { icons } from "../../utils/icon";
 import { useDispatch } from "react-redux";
+import { useTheme } from "../../context/ThemeContext";
 const { BsChevronDoubleLeft, BsChevronDoubleRight } = icons;
 
 const Sidebar = () => {
   const dispatch = useDispatch();
+  const [theme] = useTheme();
   const [toggle, settoggle] = useState(true);
   var screenWidth = window.innerWidth;
   const handleToggle = () => {
+    dispatch(setMenuLeft({ menuleft: !toggle }));
     settoggle(!toggle);
-    // dispatch(setMenuLeft({ menuleft: toggle }));
   };
   const showMenuBar = () => {
     if (screenWidth && screenWidth < 768)
@@ -27,10 +30,21 @@ const Sidebar = () => {
   return (
     <div
       className={twMerge(
-        clsx("w-[50px] bg-slate-400 hidden md:block", toggle && "w-[230px]")
+        clsx(
+          "w-[50px] bg-slate-400 hidden md:block fixed z-10",
+          toggle && "w-[230px]"
+        )
       )}
     >
-      <span onClick={handleToggle} className="cursor-pointer flex justify-end">
+      <span
+        onClick={handleToggle}
+        className={twMerge(
+          clsx(
+            "cursor-pointer flex justify-end",
+            theme === "dark" && "bg-black text-white"
+          )
+        )}
+      >
         {toggle ? (
           <BsChevronDoubleLeft size={30} title="close" />
         ) : (

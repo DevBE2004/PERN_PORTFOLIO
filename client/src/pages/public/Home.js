@@ -1,7 +1,6 @@
 import React from "react";
 import About from "./About";
-import TechStack from "./TechStack";
-import Project from "./Project";
+import { TechStack, Project, Education, WorkExperince, Contact } from ".";
 
 const Home = () => {
   return (
@@ -9,7 +8,9 @@ const Home = () => {
       <About />
       <TechStack />
       <Project />
-      <div className="h-[300px]"></div>
+      <Education />
+      <WorkExperince />
+      <Contact />
     </div>
   );
 };

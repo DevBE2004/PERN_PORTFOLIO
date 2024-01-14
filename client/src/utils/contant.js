@@ -1,9 +1,11 @@
 import { icons } from "./icon";
 import project_1 from "../assets/project_1.png";
 const {
+  MdEmail,
   FaHome,
   RiContactsFill,
   GoProject,
+  FaFacebookSquare,
   SiAboutdotme,
   MdWork,
   IoMdSchool,
@@ -19,6 +21,8 @@ const {
   SiRedis,
   SiRedux,
   DiPostgresql,
+  SiFirebase,
+  FaSquareInstagram,
 } = icons;
 export const navigationProfile = [
   {
@@ -68,57 +72,75 @@ export const techStackList = [
   {
     id: 1,
     name: "Javascript",
+    path: "https://www.javascript.com/",
     icon: <IoLogoJavascript />,
   },
   {
     id: 2,
     name: "HTML",
+    path: "https://html.com/",
     icon: <FaHtml5 />,
   },
   {
     id: 3,
     name: "CSS",
+    path: "https://www.javascript.com/",
     icon: <FaCss3 />,
   },
   {
     id: 4,
     name: "React",
+    path: "https://react.dev/",
     icon: <FaReact />,
   },
   {
     id: 5,
     name: "TailwindCss",
+    path: "https://tailwindcss.com/",
     icon: <BiLogoTailwindCss />,
   },
   {
     id: 6,
     name: "Git/Github",
+    // path: "",
     icon: <FaGithubSquare />,
+    path: "https://github.com/",
   },
   {
     id: 7,
     name: "Express",
+    // path: "",
     icon: <SiExpress />,
   },
   {
     id: 8,
     name: "Nodejs",
+    // path: "",
     icon: <FaNodeJs />,
   },
   {
     id: 9,
     name: "Redis",
+    // path: "",
     icon: <SiRedis />,
   },
   {
     id: 10,
     name: "Redux",
+    // path: "",
     icon: <SiRedux />,
   },
   {
     id: 11,
     name: "Portgres",
+    // path: "",
     icon: <DiPostgresql />,
+  },
+  {
+    id: 12,
+    name: "FireBase",
+    // path: "",
+    icon: <SiFirebase />,
   },
 ];
 export const projectList = [
@@ -147,4 +169,43 @@ export const projectList = [
     image: "",
     link: "",
   },
+];
+export const educationList = [
+  {
+    id: 1,
+    date: "2022 - 2026",
+    title: "MCA",
+    description: "IIT Mumbai, IN",
+  },
+  {
+    id: 2,
+    date: "2022 - 2026",
+    title: "BCA",
+    description: "IIT Mumbai, IN",
+  },
+  {
+    id: 3,
+    date: "2022 - 2026",
+    title: "Bằng đại học chuyên ngành công nghệ thông tin",
+    description:
+      "tốt nghiệp đại học tại trường ĐH giao thông vận tải Hồ Chí Minh ",
+  },
+];
+export const contactList = [
+  {
+    id: 1,
+    path: "https://www.facebook.com/tydz.2004/",
+    icon: <FaFacebookSquare size={30} color="blue" />,
+  },
+  {
+    id: 2,
+    path: "https://github.com/DevBE2004",
+    icon: <FaGithubSquare size={30} />,
+  },
+  {
+    id: 3,
+    path: "https://www.instagram.com/tule795/",
+    icon: <FaSquareInstagram size={30} color="#d13282ff" />,
+  },
+  // { id: 4, path: "", icon: <MdEmail size={36} /> },
 ];

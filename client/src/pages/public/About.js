@@ -3,11 +3,11 @@ import avatar from "../../assets/avatar.png";
 
 const About = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 px-8 py-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 px-8 pt-10">
       <img
         src={avatar}
         alt="avatar"
-        className="col-span-1 w-full object-cover rounded-md"
+        className="col-span-1 w-full h-full object-fill rounded-md"
       />
       <div className="col-span-1 border-r-0 sm:border-r-2 border-b-2 border-gray-400 sm:border-gray-400">
         <h2 className="text-3xl font-semibold italic text-center text-blue-400">
