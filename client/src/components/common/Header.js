@@ -57,7 +57,7 @@ const Header = ({ isDesktop }) => {
             href="http://api.whatsapp.com/send?phone=0392843805"
             rel="noreferrer"
             target="_blank"
-            className="px-4 py-2 rounded-md text-gray-300 hover:bg-green-500 text-center w-[200px] bg-blue-600"
+            className="px-4 py-2 rounded-md text-gray-300 hover:bg-green-500 text-center w-[200px] h-[70px] flex items-center justify-center bg-blue-600"
           >
             Hire Me
           </a>
@@ -65,7 +65,7 @@ const Header = ({ isDesktop }) => {
             href={Resume}
             rel="noreferrer"
             download={Resume}
-            className="px-4 py-2 rounded-md text-gray-300 hover:bg-green-500 text-center w-[200px] bg-orange-600"
+            className="px-4 py-2 rounded-md text-gray-300 hover:bg-green-500 text-center w-[200px] h-[70px] flex items-center justify-center bg-orange-600"
           >
             My Resume
           </a>
