@@ -10,7 +10,7 @@ const commonConfig = {
 const menuConfig = {
   ...commonConfig,
   key: "portfolio/menu",
-  whitelist: ["isShowMenu", "menuLeft"],
+  whitelist: [],
 };
 
 export const store = configureStore({

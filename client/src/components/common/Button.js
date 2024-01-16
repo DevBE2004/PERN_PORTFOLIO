@@ -8,11 +8,13 @@ const Button = ({
   classNameContainer,
   onClick,
   disabled = false,
+  target,
 }) => {
   return (
     <div className={twMerge(clsx("", classNameContainer))}>
       <button
         onClick={onClick}
+        formTarget={target}
         disabled={disabled}
         className={twMerge(
           clsx(

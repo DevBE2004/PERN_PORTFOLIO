@@ -4,6 +4,8 @@ import { Button, InputForm, InputText } from "../../components";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { contactList } from "../../utils/contant";
+import { apiSendMail } from "../../apis/app";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const {
@@ -12,8 +14,14 @@ const Contact = () => {
     handleSubmit,
     reset,
   } = useForm();
-  const onSubmitForm = (data) => {
-    console.log(data);
+  const onSubmitForm = async (data) => {
+    const response = await apiSendMail({
+      email: data.Email,
+      name: data.Name,
+      description: data.Description,
+    });
+    toast.success(response?.mes);
+    reset();
   };
   return (
     <div className="w-full pt-8 pb-8 grid grid-cols-1 md:grid-cols-2 sm:px-10 md:px-32">

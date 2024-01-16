@@ -1,19 +1,24 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
-import { Button } from "../../components";
-import Resume from "../../assets/docs/resume.txt";
+import Resume from "../../assets/docs/resume.doc";
 import { TfiMenu } from "react-icons/tfi";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useTheme } from "../../context/ThemeContext";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
+import { setShowModal } from "../../store/Menu/menuSlice";
+import MenuRight from "./MenuRight";
 
 const Header = ({ isDesktop }) => {
   const [theme, setTheme] = useTheme();
+  const dispath = useDispatch();
   const { isShowMenu } = useSelector((state) => state.menu);
   const handleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+  const handleRightMenu = () => {
+    dispath(setShowModal({ isShowModal: true, modalChildrent: <MenuRight /> }));
   };
   return (
     <div className="flex justify-between">
@@ -48,19 +53,30 @@ const Header = ({ isDesktop }) => {
           />
         </div>
         <div className="flex gap-4 items-center">
-          <Button children="Hire Me" />
+          <a
+            href="http://api.whatsapp.com/send?phone=0392843805"
+            rel="noreferrer"
+            target="_blank"
+            className="px-4 py-2 rounded-md text-gray-300 hover:bg-green-500 text-center w-[200px] bg-blue-600"
+          >
+            Hire Me
+          </a>
           <a
             href={Resume}
-            download="soyeulilich.pdf"
-            className="px-4 py-2 rounded-md text-gray-300 hover:bg-green-500 animate-pulse text-center hover:w-[250px] bg-orange-400"
+            rel="noreferrer"
+            download={Resume}
+            className="px-4 py-2 rounded-md text-gray-300 hover:bg-green-500 text-center w-[200px] bg-orange-600"
           >
             My Resume
           </a>
         </div>
       </div>
       {isShowMenu && (
-        <span className="top-0 right-0 p-4 fixed z-10">
-          <TfiMenu size={30} color={theme==='dark'?"white":"black"} />
+        <span
+          onClick={handleRightMenu}
+          className="top-0 right-0 p-4 fixed z-10"
+        >
+          <TfiMenu size={40} color={theme === "dark" ? "white" : "black"} />
         </span>
       )}
     </div>

@@ -4,6 +4,7 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const initRouter = require("./routes");
+const dbconnect = require("./config/db.config");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -13,8 +14,12 @@ app.use(
     url: process.env.CLIENT_URL || "*",
   })
 );
+
 app.get("/", (req, res) => {
   res.send("server on");
 });
+
 initRouter(app);
+dbconnect();
+
 app.listen(PORT, () => console.log(`server on: http://localhost:${PORT}`));

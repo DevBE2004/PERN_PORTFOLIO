@@ -1,9 +1,19 @@
 import React, { useState } from "react";
 import { projectList } from "../../utils/contant";
 import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setClickImage,
+  setCurrentImage,
+  setShowModal,
+} from "../../store/Menu/menuSlice";
+import { ZoomImage } from "../../components";
 
 const Project = () => {
   const [addView, setaddView] = useState([]);
+  const dispatch = useDispatch();
+  const { clickImage } = useSelector((state) => state.menu);
   const handleAddView = (id) => {
     if (!addView.find((el) => el.id === id))
       setaddView((prev) => [...prev, { id }]);
@@ -31,9 +41,23 @@ const Project = () => {
               <span>{el.tech}</span>
             </span>
             <img
+              onClick={() => {
+                if (!clickImage) {
+                  dispatch(
+                    setShowModal({
+                      isShowModal: true,
+                      modalChildrent: <ZoomImage el={el} />,
+                    })
+                  );
+                  dispatch(setClickImage({ clickImage: true }));
+                  dispatch(setCurrentImage({ currentImage: el.image }));
+                }
+              }}
               src={el.image}
               alt="Project image"
-              className="w-[200px] h-[100px] object-cover"
+              className={twMerge(
+                clsx("w-[200px] h-[100px] object-cover cursor-pointer")
+              )}
             />
             <span className="flex gap-2">
               <span className="font-semibold">Description: </span>
