@@ -1,5 +1,6 @@
 import { icons } from "./icon";
 import project_1 from "../assets/project_1.png";
+import project_2 from "../assets/project2.png";
 const {
   MdEmail,
   FaHome,
@@ -155,11 +156,21 @@ export const projectList = [
   },
   {
     id: 2,
-    tech: "Nodejs, Express, Mongodb, React",
-    name: "Ecommerce",
-    description: "",
-    image: "",
-    link: "",
+    tech: "Nodejs, Express, Postgres, React",
+    name: "Real Estate",
+    description: `Dự án bất động sản viết bằng PERN là một ứng dụng web đầy đủ tính năng được thiết kế để quản lý thông tin và quy trình liên quan đến bất động sản. Ứng dụng này cung cấp các chức năng sau:
+
+    Quản lý thông tin bất động sản: Người dùng có thể thêm, xem, sửa đổi và xóa thông tin về các căn hộ, nhà ở, đất đai, khu đô thị và các loại tài sản bất động sản khác. Thông tin chi tiết về tài sản bao gồm địa chỉ, mô tả, diện tích, giá trị, hình ảnh và thông tin liên hệ.
+    
+    Quản lý khách hàng: Ứng dụng cho phép quản lý thông tin về khách hàng, bao gồm tên, địa chỉ, thông tin liên hệ và lịch sử giao dịch. Người dùng có thể thêm, chỉnh sửa và xóa khách hàng khỏi hệ thống.
+    
+    Giao dịch và hợp đồng: Ứng dụng hỗ trợ quản lý giao dịch bất động sản và tạo hợp đồng liên quan. Người dùng có thể tạo và quản lý các hợp đồng mua bán, cho thuê, hoặc chuyển nhượng bất động sản. Thông tin về các giao dịch và hợp đồng bao gồm thông tin về tài sản, khách hàng, giá trị, điều kiện và thời hạn.
+    
+    Tìm kiếm và lọc: Người dùng có thể tìm kiếm và lọc thông tin bất động sản dựa trên các tiêu chí như địa điểm, loại tài sản, mức giá và diện tích. Điều này giúp người dùng dễ dàng tìm kiếm các tài sản phù hợp với nhu cầu và yêu cầu của họ.
+    
+    Báo cáo và thống kê: Ứng dụng cung cấp các báo cáo và thống kê về thông tin bất động sản và hoạt động giao dịch. Người dùng có thể xem và xuất báo cáo về doanh thu, tình trạng tài sản, khách hàng`,
+    image: project_2,
+    link: "https://real-estate-project-rust.vercel.app/",
   },
   {
     id: 3,
